@@ -20,7 +20,7 @@ neofetch
 EDITOR=/usr/bin/nano
 
 # some other useful alias
-alias myip="curl http://ipecho.net/plain; echo"
+alias whatsmyip="curl http://ipecho.net/plain; echo"
 alias df="df -h"
 
 # useful alias
@@ -44,8 +44,7 @@ alias aurremove='yay -Rns $1'
 alias q='exit'
 alias vc='vscodium'
 alias n='nano'
-alias bonk='kill $1'
-alias poff='sudo systemctl poweroff'
+alias shutdown='sudo systemctl poweroff'
 alias diskusage='ncdu'
 
 # dev aliases
