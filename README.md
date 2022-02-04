@@ -2,7 +2,7 @@
 
 This is my collection of dotfiles that I use in my bash.
 
-## List of programs needed:
+## Custom dotfiles for
 ```
 - alacritty
 - curl
@@ -13,10 +13,11 @@ This is my collection of dotfiles that I use in my bash.
 - pacman
 - picom
 - polybar
+- qpdfview
 - yay
 ```
 
-## I3 bindings for:
+## i3 bindings for
 ```
 - amixer (alsa)
 - brightnessctl
