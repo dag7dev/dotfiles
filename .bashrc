@@ -7,7 +7,7 @@ alias suspend="sudo systemctl suspend"
 
 alias inst='sudo apt install $1'
 alias uninst='sudo apt remove $1'
-alias update='sudo apt update -Syu'
+alias update='sudo apt update'
 alias instpkg='sudo dpkg -i $1'
 
 # lazy aliases
