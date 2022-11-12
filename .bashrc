@@ -1,55 +1,36 @@
-#
-# ~/.bashrc
-#
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-# ls aliases
-alias ls='ls --color=auto'
-alias la='ls -a --color=auto'
-alias ll='ls -l --color=auto'
-alias lal='ls -al --color=auto'
-
-PS1='[\u@\h \W]\$ '
-
-# Show beautiful info
-neofetch
-
-# default editor
-EDITOR=/usr/bin/nano
-
-# some other useful alias
-alias whatsmyip="curl http://ipecho.net/plain; echo"
-alias df="df -h"
-
-# useful alias
+# pm aliases
 alias reboot="sudo systemctl reboot"
 alias poweroff="sudo systemctl poweroff"
+alias shutdown='sudo systemctl poweroff'
 alias halt="sudo systemctl halt"
 alias suspend="sudo systemctl suspend"
 
-# magic-startup-arch-sh
-alias inst='sudo pacman -S $1'
-alias uninst='sudo pacman -R $1'
-alias update='sudo pacman -Syu'
-alias instpkg='sudo pacman -U $1'
-
-alias aurupd='yay -Syu'
-alias aurinst='yay -S $1'
-alias aursearch='yay -Si $1'
-alias aurremove='yay -Rns $1'
+alias inst='sudo apt install $1'
+alias uninst='sudo apt remove $1'
+alias update='sudo apt update -Syu'
+alias instpkg='sudo dpkg -i $1'
 
 # lazy aliases
 alias q='exit'
+alias c='clear'
 alias vc='vscodium'
 alias n='nano'
-alias shutdown='sudo systemctl poweroff'
-alias diskusage='ncdu'
+alias myip="curl http://ipecho.net/plain; echo"
 
-# dev aliases
-alias send2git='git add .; git commit -m $1; git push'
-alias wp_on='cd ~/vagrant-local; vagrant up'
-alias wp_off='cd ~/vagrant-local; vagrant halt'
-alias venvcreate='virtualenv venv'
-alias venvactivate='source venv/bin/activate'
+# space management
+alias diskusage='ncdu'
+alias space='sudo du -sh $1'
+alias df="df -h"
+
+function freespace {
+    echo "Cleaning pacman cache..."
+    sudo apt clean
+    read $p
+
+    echo "Cleaning cache..."
+    sudo du -sh ~/.cache/
+    rm -rf ~/.cache/*
+
+    echo "Cleaning journal files..."
+    sudo journalctl --vacuum-size=50M
+}
