@@ -23,7 +23,7 @@ alias space='sudo du -sh $1'
 alias df="df -h"
 
 function freespace {
-    echo "Cleaning pacman cache..."
+    echo "Cleaning apt cache..."
     sudo apt clean
     read $p
 
